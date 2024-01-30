@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>TRAFFIC LIGHT</h2>
+    <div>
+      <button onclick="dendo()">RED</button>
+      <button onclick="denvang()">YELLOW</button>
+      <button onclick="denxanh()">GREEN</button>
+    </div>
+
+    <div id="cotden" class="cotden">
+      <div id="dendo" class="dendo"></div>
+      <div id="denvang" class="denvang"></div>
+      <div id="denxanh" class="denxanh"></div>
+    </div>
+  </div>
+
+  <script language="javascript" type="text/javascript">
+    var denColors = ["green", "red", "yellow"];
+
+    function changeLightColor(LightIndex) {
+      var denXanh = document.getElementById("denxanh");
+      var denDo = document.getElementById("dendo");
+      var denVang = document.getElementById("denvang");
+
+      denXanh.style.backgroundColor = "white";
+      denDo.style.backgroundColor = "white";
+      denVang.style.backgroundColor = "white";
+
+      for (var i = 0; i < denColors.length; i++) {
+        if (i === LightIndex) {
+          var selectedDen = denColors[i];
+          if (selectedDen === "green") {
+            denXanh.style.backgroundColor = selectedDen;
+          } else if (selectedDen === "red") {
+            denDo.style.backgroundColor = selectedDen;
+          } else if (selectedDen === "yellow") {
+            denVang.style.backgroundColor = selectedDen;
+          }
+          break;
+        }
+      }
+    }
+
+    function denxanh() {
+      changeLightColor(0);
+    }
+
+    function dendo() {
+      changeLightColor(1);
+    }
+
+    function denvang() {
+      changeLightColor(2);
+    }
+  </script>
+</body>
+
+</html>
